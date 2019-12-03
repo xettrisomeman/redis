@@ -14,17 +14,9 @@ def hello_redis():
     redisClient = redis.Redis(host=redis_host, port=redis_port , db=0)
 
 
-    #push from bottom to a list
-
-    #first get a keys
-    print(redisClient.keys('*'))
-
-    #check if the key is list or not
-    print(redisClient.type("numbers"))
-
-    #push 1 from bottom
-    redisClient.rpush("numbers",1)
-    print(redisClient.lrange("numbers" , 0,-1))
+    #get a legth of a list
+    print(redisClient.llen("numbers"))
+    
 
 
 hello_redis()
