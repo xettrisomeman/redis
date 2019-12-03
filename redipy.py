@@ -18,10 +18,14 @@ def hello_redis():
 
     redisClient.hmset("stud:101" , hash_set)
 
-    #delete a key
-    redisClient.hdel("stud:101" , "age")
+
+    #get list of keys
+    print(redisClient.hkeys("stud:101"))
+
+    #get list of values
+    print(redisClient.hvals("stud:101"))
 
 
-    print(redisClient.hgetall("stud:101"))
+
 hello_redis()
 
