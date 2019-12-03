@@ -15,13 +15,9 @@ def hello_redis():
 
 
 
-    #create a set
-    #sadd(keyname,value,value) we can add as much as value we need
-    #set is created value in random
-    redisClient.sadd("hello" , 1,2,3,4)
+    #get len of set
 
-    #get a set
-    print(redisClient.smembers("hello"))
+    print(redisClient.scard("hello"))
 
 
     # NOTICE: set cannot have duplicates value
