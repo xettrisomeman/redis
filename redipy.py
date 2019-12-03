@@ -15,7 +15,15 @@ def hello_redis():
 
     #set a integer
     redisClient.set("number" ,10)
-    
+
+    #increase and decrease integer
+    redisClient.incr("number")
+    print(redisClient.get("number"))
+
+    redisClient.decr("number")
+    print(redisClient.get("number"))
+
+
 
 hello_redis()
 
