@@ -13,14 +13,13 @@ def hello_redis():
 
     redisClient = redis.Redis(host=redis_host, port=redis_port , db=0)
 
-    #set a hash key
-    hash_set = {"name" : "someman" , "age" : 10 , "country": "Nepal"}
 
-    redisClient.hmset("stud:101" , hash_set)
+    #set a list
+    
+    redisClient.lpush("numbers" , 1,2,3,4)
 
-
-    #check if key exists or not
-    print(redisClient.hexists("stud:101" , "age"))
+    #get all list
+    print(redisClient.lrange("numbers" , 0,-1))
 
 
 
