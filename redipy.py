@@ -14,15 +14,13 @@ def hello_redis():
     redisClient = redis.Redis(host=redis_host, port=redis_port , db=0)
 
 
-    #pop value from top
-    redisClient.lpop("numbers")
 
+    #get value from index
 
+    #lindex(key , index)
 
-    #pop value from bottom
-    redisClient.rpop("numbers")
-
-    print(redisClient.lrange("numbers" , 0,-1))
+    #get first element of the list
+    print(redisClient.lindex("numbers" , 0))
 
 
 
