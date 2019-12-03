@@ -13,6 +13,9 @@ def hello_redis():
     #set a value
     redisClient.set("name", "someman")
 
+    #get a value
+
+    redisClient.get("name")
     
 
 
