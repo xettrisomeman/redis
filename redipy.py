@@ -19,11 +19,8 @@ def hello_redis():
     redisClient.hmset("stud:101" , hash_set)
 
 
-    #get list of keys
-    print(redisClient.hkeys("stud:101"))
-
-    #get list of values
-    print(redisClient.hvals("stud:101"))
+    #check if key exists or not
+    print(redisClient.hexists("stud:101" , "age"))
 
 
 
