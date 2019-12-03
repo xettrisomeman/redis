@@ -7,18 +7,19 @@ redis_host = "localhost"
 redis_port = 6379
 
 
+#HASHMAP
 
 def hello_redis():
 
     redisClient = redis.Redis(host=redis_host, port=redis_port , db=0)
 
-    #set a key
-    redisClient.set("country" , "nepal")
+    #set a hash key
+    hash_set = {"name" : "someman" , "age" : 10 , "country": "Nepal"}
 
-    #get len of the string
+    redisClient.hmset("stud:101" , hash_set)
 
-    print(redisClient.strlen("country"))
-
+    #get all hash key 
+    print(redisClient.hgetall("stud:101")) 
     
 
 
