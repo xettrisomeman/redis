@@ -13,15 +13,9 @@ def hello_redis():
     #set a value
     redisClient.set("name", "someman")
 
-    #set a integer
-    redisClient.set("number" ,10)
-
-    #increase by and decrease by
-    redisClient.incrby("number" , 22)
-    print(redisClient.get("number"))
-
-    redisClient.decrby("number" , 10)
-    print(redisClient.get("number"))
+    #append a string
+    redisClient.append("name" , "hello")
+    print(redisClient.get("name"))
 
 
 
