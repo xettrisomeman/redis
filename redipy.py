@@ -16,11 +16,11 @@ def hello_redis():
     #set a integer
     redisClient.set("number" ,10)
 
-    #increase and decrease integer
-    redisClient.incr("number")
+    #increase by and decrease by
+    redisClient.incrby("number" , 22)
     print(redisClient.get("number"))
 
-    redisClient.decr("number")
+    redisClient.decrby("number" , 10)
     print(redisClient.get("number"))
 
 
