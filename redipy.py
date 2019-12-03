@@ -12,18 +12,11 @@ def hello_redis():
 
     redisClient = redis.Redis(host=redis_host, port=redis_port , db=0)
 
-    #set a value for a expiry date
-    date = datetime.timedelta(seconds=10)
+    #set multi key value
+    redisClient.mset({"name" : "someman" , "age":20})
 
-    #set a value for 10 seconds
-    redisClient.setex("name" , date,value="someman")
-
-    #print
-    print(redisClient.get("name"))
-    #wait for 10 seconds
-    time.sleep(10)
-    #again do the printing
-    print(redisClient.get("name"))
+    #get multi key (it returns list)
+    print(redisClient.mget("name" ,"age"))
 
     
 
