@@ -18,8 +18,8 @@ def hello_redis():
 
     redisClient.hmset("stud:101" , hash_set)
 
-    #get all hash key 
-    print(redisClient.hgetall("stud:101")) 
+    #get one value
+    print(redisClient.hget("stud:101","age")) 
     
 
 
