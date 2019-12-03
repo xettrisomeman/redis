@@ -15,13 +15,16 @@ def hello_redis():
 
 
 
-    #get value from index
+    #create a set
+    #sadd(keyname,value,value) we can add as much as value we need
+    #set is created value in random
+    redisClient.sadd("hello" , 1,2,3,4)
 
-    #lindex(key , index)
+    #get a set
+    print(redisClient.smembers("hello"))
 
-    #get first element of the list
-    print(redisClient.lindex("numbers" , 0))
 
+    # NOTICE: set cannot have duplicates value
 
 
 hello_redis()
