@@ -18,11 +18,9 @@ def hello_redis():
 
     redisClient.hmset("stud:101" , hash_set)
 
-    #get one value
-    print(redisClient.hget("stud:101","age")) 
+    #get multi value
     
-
-
+    print(redisClient.hmget("stud:101" , "age" , "country"))
 
 hello_redis()
 
